@@ -71,8 +71,10 @@ if CLIENT then
         end
 
         g_VR.moduleVersion = g_VR.moduleVersion or 0
-        if hook.Call("VRMod_Allow", nil, LocalPlayer()) == false then
-            error = "Blocked by hook."
+
+        local allowVRMod,blockReason = hook.Call("VRMod_Allow", nil, LocalPlayer())
+        if allowVRMod == false then
+            error = string.format("Blocked by hook: [%s]",blockReason or "")
         elseif g_VR.moduleVersion == 0 then
             if not file.Exists(moduleFile, "GAME") then
                 error = "Module not installed.\nPlease follow the workshop instructions to install the module."
