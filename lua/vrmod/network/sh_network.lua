@@ -426,6 +426,8 @@ if SERVER then
 
 	vrmod.NetReceiveLimited("vrutil_net_join", 5, 2, function(len, ply)
 		if g_VR[ply:SteamID()] ~= nil then return end
+		if hook.Call("VRMod_Allow", nil, ply) == false then return end
+
 		ply:DrawShadow(false)
 		ply.originalViewOffset = ply:GetViewOffset()
 		ply.viewOffset = Vector(0, 0, 0)
