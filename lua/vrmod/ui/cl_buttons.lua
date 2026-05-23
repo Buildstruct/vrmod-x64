@@ -41,7 +41,7 @@ local function InitializeMenuItems()
     vrmod.AddInGameMenuItem("Toggle Noclip", 2, 1, function() LocalPlayer():ConCommand("noclip") end, true)
     vrmod.AddInGameMenuItem("Undo", 3, 1, function() LocalPlayer():ConCommand("gmod_undo") end, true)
     vrmod.AddInGameMenuItem("Cleanup", 4, 1, function() LocalPlayer():ConCommand("gmod_cleanup") end, true)
-    vrmod.AddInGameMenuItem("Admin Cleanup", 5, 1, function() LocalPlayer():ConCommand("gmod_admin_cleanup") end, true)
+    vrmod.AddInGameMenuItem("Enter Killstruct", 5, 1, function() LocalPlayer():ConCommand("sam ks") end, true)
 
     -- Row 3
     vrmod.AddInGameMenuItem("Reset Vehicle View", 0, 2, function() VRUtilresetVehicleView() end, true)
